@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 5px;
+        background: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    audio {
+        width: 320px;
+        height: 40px;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+<audio id="player" controls autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Trình duyệt không hỗ trợ phát nhạc.
+</audio>
+
+<script>
+    const player = document.getElementById("player");
+
+    player.volume = 0.5;
+
+    window.addEventListener("load", () => {
+        player.play().catch(() => {});
+    });
+
+    document.addEventListener("click", () => {
+        player.play().catch(() => {});
+    }, { once: true });
+
+    document.addEventListener("touchstart", () => {
+        player.play().catch(() => {});
+    }, { once: true });
+</script>
+
+
+</body>
+
+</html>
